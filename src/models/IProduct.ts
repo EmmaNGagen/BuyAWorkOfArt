@@ -1,7 +1,8 @@
 export interface IProduct {
-  name: string;
-  title: string;
-  image?: string;
-  slug: string;
   details: string;
+  image?: string;
+  name: string;
+  price: number;
+  slug: { current: string; _type: string };
+  title: string;
 }

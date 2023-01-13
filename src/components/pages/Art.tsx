@@ -5,11 +5,12 @@ import { IProduct } from "../../models/IProduct";
 
 export const Art = () => {
   const [singleProduct, setSingleProduct] = useState<IProduct>({
-    name: "",
-    title: "",
-    image: "",
-    slug: "",
     details: "",
+    image: "",
+    name: "",
+    price: 0,
+    slug: { current: "", _type: "" },
+    title: "",
   });
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
