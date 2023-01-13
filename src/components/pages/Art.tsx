@@ -19,11 +19,12 @@ export const Art = () => {
     client
       .fetch(
         `*[slug.current == "${slug}"]{
-    slug,
+    details,
     image,
     name,
     price,
-    details,
+    slug,
+    title,
 
   }`
       )
