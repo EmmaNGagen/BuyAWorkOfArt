@@ -19,7 +19,7 @@ function App() {
           <Route path="/artwork" element={<Artwork />}></Route>
           <Route path="/about" element={<About />}></Route>
           <Route path="/login" element={<Login />}></Route>
-          <Route path="/art" element={<Art />}></Route>
+          <Route path="/art/:slug" element={<Art />}></Route>
           <Route path="/shoppingCart" element={<ShoppingBag />}></Route>
           <Route path="*" element={<NoMatch />} />
         </Route>

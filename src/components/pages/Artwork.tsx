@@ -1,6 +1,6 @@
 import { client, urlFor } from "../../Client";
-import React, { useState, useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export const Artwork = () => {
   const [product, setProduct] = useState<any[]>([]);
@@ -28,7 +28,7 @@ export const Artwork = () => {
           {product &&
             product.map((product: any, index: any) => (
               <Link
-                to={"/art" + product.slug.current}
+                to={"/art/" + product.slug.current}
                 key={product.slug.current}
               >
                 <div className="imgDiv">

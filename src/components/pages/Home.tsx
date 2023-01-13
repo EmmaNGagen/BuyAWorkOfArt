@@ -2,23 +2,34 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { client, urlFor } from "../../Client";
 import colorDrop from "../../images/colorDrop.png";
+
 export const Home = () => {
   const [product, setProduct] = useState<any[]>([]);
-  const [showDate, setShowDate] = useState(false);
+  const [showFour, setShowFour] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "product"]{
-    slug,
-    image,
-    name
-  }`
-      )
-      .then((data: any) => setProduct(data))
-      .catch(console.error);
+    const fetchdata = async () => {
+      try {
+        await client
+          .fetch(
+            `*[_type == "product"]{
+          slug,
+          image,
+          name
+        }`
+          )
+          .then((data: any) => setProduct(data));
+      } catch (err) {
+        setLoading(true);
+      }
+    };
+    fetchdata();
   }, []);
+
   console.log(product);
+
+  useEffect(() => {});
 
   return (
     <>
