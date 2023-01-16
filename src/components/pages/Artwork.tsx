@@ -17,7 +17,7 @@ export const Artwork = () => {
       .then((data: any) => setProduct(data))
       .catch(console.error);
   }, []);
-  console.log(product);
+  //console.log(product);
 
   return (
     <>
