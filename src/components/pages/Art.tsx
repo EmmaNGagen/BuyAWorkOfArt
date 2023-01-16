@@ -4,16 +4,17 @@ import { useParams } from "react-router-dom";
 import { IProduct } from "../../models/IProduct";
 
 export const Art = () => {
-  const [singleProduct, setSingleProduct] = useState<IProduct>({
-    details: "",
-    image: "",
-    name: "",
-    price: 0,
-    slug: { current: "", _type: "" },
-    title: "",
-  });
+  const [singleProduct, setSingleProduct] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
+  //<IProduct>({
+  //details: "",
+  //image: "",
+  //name: "",
+  //price: 0,
+  //slug: { current: "", _type: "" },
+  //title: "",
+  //});
 
   useEffect(() => {
     client
@@ -33,8 +34,7 @@ export const Art = () => {
     setIsLoading(false);
   }, [slug]);
 
-  console.log(singleProduct);
-  console.log(singleProduct.image);
+  console.log(singleProduct.details);
   return (
     <>
       {isLoading ? (
