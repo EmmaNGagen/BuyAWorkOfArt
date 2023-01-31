@@ -58,6 +58,7 @@
   .artSection {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
     border-bottom: solid 2px;
     .artWorkImage {
@@ -68,6 +69,20 @@
       height: 320px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    .product-info{
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+      .product-name{
+        text-transform: capitalize;
+        font-weight: 500;
+      }
+      .shopping-bag{
+        font-size: x-large;
+        color: #0e0906;
+      }
     }
   }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { client, urlFor } from "../../Client";
 import colorDrop from "../../images/colorDrop.png";
+import { AiOutlineShopping } from "@react-icons/all-files/ai/AiOutlineShopping";
 
 export const Home = () => {
   const [product, setProduct] = useState<any[]>([]);
@@ -16,7 +17,8 @@ export const Home = () => {
             `*[_type == "product"]{
           slug,
           image,
-          name
+          name,
+          price
         }`
           )
           .then((data: any) => setProduct(data));
@@ -26,8 +28,6 @@ export const Home = () => {
     };
     fetchdata();
   }, []);
-
-  console.log(product);
 
   useEffect(() => {});
 
@@ -50,11 +50,25 @@ export const Home = () => {
         <div className="artSection">
           {product &&
             product.map((product: any, index: any) => (
-              <img
-                src={urlFor(product.image[0].asset).url()}
-                alt={product.image}
-                className="artWorkImage"
-              />
+              <div>
+                <Link
+                  to={"/art/" + product.slug.current}
+                  key={product.slug.current}
+                >
+                  <img
+                    src={urlFor(product.image[0].asset).url()}
+                    alt={product.image}
+                    className="artWorkImage"
+                  />
+                </Link>
+                <div className="product-info">
+                  <p className="product-name">{product.name} </p>
+                  <p className="product-price"> {product.price}:-</p>
+                  <Link className="cart-icon" to={"/shoppingCart"}>
+                    <AiOutlineShopping className="shopping-bag"  />
+                  </Link>
+                </div>
+              </div>
             ))}
         </div>
       </div>

@@ -5,6 +5,9 @@ import { Footer } from "./pages/Footer";
 import shoppingBag from "../images/shoppingBag.png";
 import bawoaLogo from "../images/bawoaLogo.png";
 import "../styles/main.scss";
+import { AiOutlineShopping } from "@react-icons/all-files/ai/AiOutlineShopping";
+import { FiMenu } from "@react-icons/all-files/fi/FiMenu";
+import { FaBars } from "@react-icons/all-files/fa/FaBars";
 
 export const Layouts = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -37,24 +40,22 @@ export const Layouts = () => {
                 </Link>
               </li>
               <Link to="/shoppingCart" className="">
-                <img
-                  className="shopping-bag"
-                  src={shoppingBag}
-                  alt="shopping cart"
-                ></img>
+                <AiOutlineShopping className="shopping-bag" />
               </Link>
             </ul>
-
-            <button
-              className="mobile-menu-icon"
-              onClick={() => setIsMobile(!isMobile)}
-            >
-              {isMobile ? (
-                <li className="fas fa-times"></li>
-              ) : (
-                <i className="fas fa-bars"></i>
-              )}
-            </button>
+            <div className="nav-links-section">
+            <Link to={"/shoppingCart"} className="">
+                <AiOutlineShopping className="shopping-bag" />
+              </Link>
+              <button
+                className="mobile-menu-icon"
+                onClick={() => setIsMobile(!isMobile)}
+              >
+                {isMobile ? <FiMenu /> : <FaBars />}
+              </button>
+            </div>
+              
+            
           </nav>
         </div>
       </header>

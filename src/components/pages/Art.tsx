@@ -7,34 +7,28 @@ export const Art = () => {
   const [singleProduct, setSingleProduct] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
   const { slug } = useParams();
-  //<IProduct>({
-  //details: "",
-  //image: "",
-  //name: "",
-  //price: 0,
-  //slug: { current: "", _type: "" },
-  //title: "",
-  //});
 
   useEffect(() => {
     client
       .fetch(
-        `*[slug.current == "${slug}"]{
-    details,
+        ` *[slug.current == "${slug}"]{
     image,
     name,
-    price,
     slug,
-    title,
+    price,
+    details,
+
 
   }`
       )
-      .then((response: any) => setSingleProduct(response))
+      .then((response: any) => setSingleProduct(response[0]))
       .catch(console.error);
     setIsLoading(false);
   }, [slug]);
 
-  console.log(singleProduct.details);
+  if (!singleProduct) return <div>Loading...</div>;
+
+  console.log(singleProduct);
   return (
     <>
       {isLoading ? (
@@ -42,14 +36,16 @@ export const Art = () => {
       ) : (
         <div className="mainSingleArt">
           {singleProduct.image && singleProduct.image && (
-            <div>
-              <h2>{singleProduct.name}</h2>
-              <div className="imageDiv">
-                <img
-                  src={urlFor(singleProduct.image).url()}
-                  alt={singleProduct.name}
-                />
-                <p> </p>
+            <div className="contentDiv">
+              <img
+                className="artImage"
+                src={urlFor(singleProduct.image[0].asset).url()}
+                alt={singleProduct.name}
+              />
+
+              <div className="products-info">
+                <h2>{singleProduct.name}</h2>
+                <p>{singleProduct.details} </p>
               </div>
             </div>
           )}
