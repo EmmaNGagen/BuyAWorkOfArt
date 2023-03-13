@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import bawoaLogo from "../../images/bawoaLogo.png";
+import hangit from "../../images/hangit.png";
 
 export const NoMatch = () => {
   return (
@@ -11,7 +11,7 @@ export const NoMatch = () => {
       <Link className="back-btn" to="/">
         Back to home
       </Link>
-      <img className="logo" src={bawoaLogo} alt="logo" />
+      <img className="logo" src={hangit} alt="logo" />
     </div>
   );
 };

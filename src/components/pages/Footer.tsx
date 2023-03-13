@@ -6,7 +6,7 @@ export const Footer = () => {
         Log in
       </Link>
 
-      <p>Copyright 2022 | BuyAWorkOfArt</p>
+      <p>Copyright 2022 | Hangit</p>
     </footer>
   );
 };

@@ -6,7 +6,7 @@ import { Layouts } from "./components/Layouts";
 import { About } from "./components/pages/About";
 import { Login } from "./components/pages/Login";
 import { Artwork } from "./components/pages/Artwork";
-import { ShoppingBag } from "./components/pages/ShoppingBag";
+import { Checkout } from "./components/pages/Checkout";
 import { Art } from "./components/pages/Art";
 import { NoMatch } from "./components/pages/NoMatch";
 
@@ -20,7 +20,7 @@ function App() {
           <Route path="/about" element={<About />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/art/:slug" element={<Art />}></Route>
-          <Route path="/shoppingCart" element={<ShoppingBag />}></Route>
+          <Route path="/checkout" element={<Checkout />}></Route>
           <Route path="*" element={<NoMatch />} />
         </Route>
       </Routes>

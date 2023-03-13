@@ -1,22 +1,189 @@
 .artWorkMain {
-  background-color: #f4f4f4;
-
-  .artContainer {
+  font-family: "Montserrat", sans-serif;
+  .banner-artwork {
+    background-image: url(../images/banner2.png);
+    background-color: #f5f4ee;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 10%;
     display: flex;
     justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 10px;
+    align-items: center;
+    margin-bottom: 50px;
+
+    .banner-title {
+      text-transform: uppercase;
+      color: #f5f4ee;
+    }
+  }
+
+  .artContainer {
+
     .imgDiv {
       padding: 15px;
+
       .artWorkImage {
-        border-style: solid;
-        border-color: black;
-        border-width: 5px;
-        width: 250px;
-        height: 320px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.152),
+          0 6px 20px 0 rgba(0, 0, 0, 0.111);
+      }
+
+      .product-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .product-name {
+          text-transform: capitalize;
+          font-weight: 700;
+
+        }
+
+        .buy-art-div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          .product-price {
+            font-weight: 700;
+          }
+
+          .shopping-cart {
+            margin: 0;
+            padding: 0;
+            font-size: x-large;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .artWorkMain {
+    .banner-artwork {
+      height: 20vh;
+
+      .banner-title {
+        font-size: 25px;
+        font-weight: 700;
+
+      }
+    }
+
+    .artContainer {
+      display: flex;
+      flex-wrap: wrap;
+
+      .imgDiv {
+        width: 40%;
+
+
+        .artWorkImage {
+          object-fit: cover;
+          max-width: 100%;
+          height: auto;
+          vertical-align: middle;
+
+        }
+
+        .product-info {
+          display: flex;
+
+
+
+          .product-name {
+            margin: 0;
+            font-size: 12px;
+          }
+
+          .buy-art-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .product-price {
+              font-size: 12px;
+
+            }
+
+            .shopping-bag {
+              margin: 0;
+              padding: 0;
+              font-size: large;
+              color: #0e0906;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .artWorkMain {
+    .banner-artwork {
+      height: 40vh;
+
+      .banner-title {
+        font-size: 50px;
+        font-weight: 00;
+
+      }
+    }
+
+    .artContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 10px;
+
+      .imgDiv {
+
+
+        .artWorkImage {
+
+          max-width: 250px;
+          max-height: 320px;
+
+        }
+
+        .product-info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 13px;
+
+          .product-name {
+            text-transform: capitalize;
+            font-weight: 700;
+            margin: 0;
+          }
+
+          .buy-art-div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding-left: 150px;
+
+            .product-price {
+              margin: 0;
+              font-size: 15px;
+            }
+
+            .shopping-cart {
+              margin: 0;
+              padding: 0;
+              font-size: xx-large;
+            }
+          }
+
+        }
       }
     }
   }

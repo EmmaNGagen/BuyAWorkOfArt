@@ -1,47 +1,108 @@
-.hero-section {
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/heroBanner.png);
+  background-color: #f5f4ee;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: 40%;
+  filter: brightness(88%);
+}
+
+.hero {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  height: 70vh;
-  background-color: #f4f4f4;
-  .hero-text-image-div {
-    padding-top: 30px;
-    .color-drop {
-      width: 50%;
-    }
-    .btnDiv {
-      position: relative;
-      top: 80px;
-      .btn-Exhibition {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-        width: 200px;
-        height: 40px;
-        background-color: #0e0906;
-        border-radius: 6px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        a {
-          text-decoration: none;
-          color: white;
-          font-size: 1.2rem;
-          font-weight: 500;
-        }
-      }
+  justify-content: center;
+  align-items: center;
+
+  .hero-content {
+    position: relative;
+    font-family: "Monserrat", sans-serif;
+    color: #f5f4ee;
+    text-align: center;
+    margin: 0.625rem;
+  }
+
+  .hero-title {
+    padding-top: 20px;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .hero-subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  .hero-button {
+    margin: 10px;
+    background-color: #0e0906;
+    border: none;
+    border-radius: 3px;
+    margin-top: 1rem;
+    padding: 0.9375rem 1.875rem;
+    font-family: "Monserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: #f5f4ee;
+      font-size: 1.2rem;
+
     }
   }
 
-  .hero-image {
-    background-image: url(../images/colorPalette.png);
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
+  .hero-button-two {
+    margin: 10px;
+    background-color: #f5f4ee;
+    border: none;
+    ;
+    border-radius: 3px;
+    margin-top: 1rem;
+    padding: 0.9375rem 1.875rem;
+    font-family: "Monserrat", sans-serif;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: #0e0906;
+      font-size: 1.2rem;
+
+    }
+
   }
 }
+
+
+.hero-button:hover, .hero-button-two:hover  {
+  background-color: #B6B5B1;
+  border: none;
+
+  a {
+    text-decoration: none;
+    color: #f5f4ee;
+    font-size: 1.2rem;
+
+  }
+}
+
+
+
 
 .main-home-wrapper {
   margin: 0 auto;
@@ -55,33 +116,51 @@
     font-weight: 500;
     font-size: 2.2rem;
   }
-  .artSection {
+
+  .artSectionParent {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    border-bottom: solid 2px;
-    .artWorkImage {
-      border-style: solid;
-      border-color: black;
-      border-width: 5px;
-      width: 250px;
-      height: 320px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    .product-info{
-      display: flex;
-      flex-direction: row;
-      gap: 10px;
-      align-items: center;
-      .product-name{
-        text-transform: capitalize;
-        font-weight: 500;
+    gap: 20px;
+
+
+    .artSectionChild {
+      width: 20%;
+      box-sizing: border-box;
+
+      .artWorkImage {
+        border-width: 5px;
+        width: 250px;
+        height: 320px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
-      .shopping-bag{
-        font-size: x-large;
-        color: #0e0906;
+
+      .product-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+
+        .product-name {
+          text-transform: capitalize;
+          font-weight: 700;
+          font-family: "Montserrat", sans-serif;
+        }
+
+        .buy-art-div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding-left: 30px;
+
+          .shopping-cart {
+            font-size: x-large;
+            color: #0e0906;
+          }
+        }
+
       }
     }
   }

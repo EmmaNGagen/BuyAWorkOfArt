@@ -4,42 +4,65 @@
 @import "artwork";
 @import "noMatch";
 @import "art";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+   
+
+
 
 body {
-  color: #0e0906;
-  background-color: white;
-  font-family: "Montserrat", sans-serif;
-  width: 100%;
-  height: 100%;
+ 
+
   header {
-    position: relative;
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 0px 15px;
-    max-width: 1200px;
+    position: sticky;
+    top: 0;
     margin: 0 auto;
+    z-index: 1999;
+    background-color: #ffffff;
+
     .logo {
-      width: 45%;
-    }
-    .home {
-      z-index: 10;
-      color: #0e0906;
-      text-decoration: none;
-      font-size: 20px;
+      width: 25%;
     }
   }
+
+
 }
 
 @media screen and (max-width: 767px) {
   .layoutsWrapper {
-    header{
+    header {
       padding: 10px;
     }
-    .shopping-bag {
-      font-size: xx-large;
-      padding-right: 60px;
-      color: #0e0906;
+
+    .nav-links-section {
+
+      .cart-button-div {
+
+        .cart-button {
+          border: none;
+          outline: none;
+          background: transparent;
+          cursor: pointer;
+          width: 180px;
+          height: 40px;
+
+          -webkit-transition: all 0.3s linear;
+          background-size: 1px 200px;
+
+          .fi-Shopping-Cart {
+            font-size: 30px;
+
+          }
+        }
+      }
     }
+
+
     .mobile-menu-icon {
       display: block;
       font-size: 35px;
@@ -50,77 +73,120 @@ body {
       background-color: transparent;
       border: none;
       outline: none;
-      color: #0e0906;
-      z-index: 10;
+      color: #222121;
+      //z-index: 10;
     }
-      .nav-links-mobile {
-        position: absolute;
-        display: block;
-        list-style: none;
-        background-color: #ffffff;
-        left: 0;
-        top: -15px;
-        transition: all 0.5s ease-out;
-        width: 100%;
-        height: 100vh;
-        padding: 0px;
-        z-index: 10;
-        
-        li {
-          margin-top: 40px;
+
+    .nav-links-mobile {
+      position: absolute;
+      display: block;
+      list-style: none;
+      background-color: #ffffff;
+      left: 0;
+      top: -15px;
+      transition: all 0.5s ease-out;
+      width: 100%;
+      height: 100vh;
+      padding: 0px;
+      //z-index: 10;
+
+      li {
+        margin-top: 40px;
+
+        a {
+          text-decoration: none;
+          text-align: center;
+          padding: 0px;
+          width: 100%;
           color: #0e0906;
-          a {
-            text-decoration: none;
-            text-align: center;
-            padding: 0px;
-            width: 100%;
-            color: #0e0906;
-            margin: 0px;
-            cursor: pointer;
-            font-size: 30px;
-            transition: all 0.5s ease-out;
-            margin-top: 50px;
-          }
+          margin: 0px;
+          cursor: pointer;
+          font-size: 30px;
+          transition: all 0.5s ease-out;
+          margin-top: 50px;
         }
-        li:first-child {
-          margin-top: 130px;
+
+      }
+
+      li:first-child {
+        margin-top: 130px;
+      }
+
+      .cart-button {
+        border: none;
+        outline: none;
+        background: transparent;
+        width: 500px;
+
+        -webkit-transition: all 0.3s linear;
+        background-size: 1px 200px;
+
+        .fi-Shopping-Cart {
+          margin: 10px;
+          font-size: 45px;
+
         }
       }
-      
-      .nav-links {
-        display: none;
-      }
-  
     }
-    
+
+    .nav-links {
+      display: none;
+    }
+
   }
+
+}
 
 
 @media screen and (min-width: 768px) {
   body {
+    
     .layoutsWrapper {
       .nav-div {
-        position: absolute;
+        position: fixed;
         right: 0;
-        .shopping-bag {
-          font-size: xx-large;
-          padding-top: 15px;
-          color: #0e0906;
+
+        .cart-button-div {
+          
+          display: flex;
+          align-items: center;
+
+          .cart-button {
+           // border: #c5c4c131 2px solid;
+           border: none;
+            outline: none;
+            background: transparent;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            -webkit-transition: all 0.3s linear;
+            background-size: 1px 200px;
+            margin: 0;
+            padding: 0;
+
+            .fi-Shopping-Cart {
+              font-size: 30px;
+
+            }
+          }
         }
+
         nav {
           .nav-links {
             display: flex;
             list-style-type: none;
             gap: 15px;
-            margin: 0px 15px;
+            margin: 0px 55px;
+
             li {
               .nav-link {
                 display: inline-block;
-                position: relative;
-                color: #0e0906;
+                color: #222121;
                 font-weight: normal;
                 text-transform: uppercase;
                 padding: 5px;
+                font-family: "Montserrat", sans-serif;
               }
 
               .nav-link:hover {
@@ -129,11 +195,12 @@ body {
             }
           }
         }
+
       }
     }
   }
+
   .nav-links-section {
     display: none;
   }
 }
-
